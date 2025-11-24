@@ -34,37 +34,42 @@ $(function () {
 
     ***************************/
 
-    const preloaderTimeline = gsap.timeline();
+    const preloader = document.querySelector(".mil-preloader");
+    if (preloader) {
+        const preloaderTimeline = gsap.timeline();
 
-    preloaderTimeline
-        .to(".mil-preloader", {
-            height: 0,
-            ease: "sine",
-            duration: .4,
-            delay: '2.3',
-        })
-        .to(".mil-preloader .mil-load", {
-            width: 'calc(100% - 30px)',
-            ease: "linear",
-            duration: '1.3',
-            delay: '-2.3',
-        })
-        .to(".mil-preloader .mil-load", {
-            opacity: 0,
-            ease: "sine",
-            duration: '0.4',
-            delay: '-0.6',
-        })
-        .to(".mil-preloader p", {
-            scale: .5,
-            opacity: 0,
-            ease: "sine",
-            duration: .4,
-            delay: '-0.7',
-            onComplete: function () {
-                ScrollTrigger.refresh();
-            },
-        })
+        preloaderTimeline
+            .to(".mil-preloader", {
+                height: 0,
+                ease: "sine",
+                duration: .4,
+                delay: '2.3',
+            })
+            .to(".mil-preloader .mil-load", {
+                width: 'calc(100% - 30px)',
+                ease: "linear",
+                duration: '1.3',
+                delay: '-2.3',
+            })
+            .to(".mil-preloader .mil-load", {
+                opacity: 0,
+                ease: "sine",
+                duration: '0.4',
+                delay: '-0.6',
+            })
+            .to(".mil-preloader p", {
+                scale: .5,
+                opacity: 0,
+                ease: "sine",
+                duration: .4,
+                delay: '-0.7',
+                onComplete: function () {
+                    ScrollTrigger.refresh();
+                },
+            });
+    } else {
+        ScrollTrigger.refresh();
+    }
 
     /***************************
 
