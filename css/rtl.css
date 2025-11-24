@@ -1,0 +1,95 @@
+/* RTL overrides tailored for the +WINCARD Hebrew experience */
+
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+body[dir="rtl"] .mil-top-panel,
+body[dir="rtl"] .mil-top-menu,
+body[dir="rtl"] .mil-top-menu ul {
+    direction: rtl;
+}
+
+body[dir="rtl"] .mil-top-menu ul {
+    flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .mil-top-menu ul li {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+body[dir="rtl"] .mil-top-menu ul li:last-child {
+    margin-left: 0;
+}
+
+body[dir="rtl"] .mil-top-menu ul li.mil-has-children > a {
+    padding-left: 24px;
+    padding-right: 15px;
+}
+
+body[dir="rtl"] .mil-top-menu ul li.mil-has-children > a:after {
+    left: 8px;
+    right: auto;
+    transform: scaleX(-1);
+}
+
+body[dir="rtl"] .mil-top-menu ul li ul {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+
+body[dir="rtl"] .mil-top-menu ul li ul li {
+    margin-right: 0;
+}
+
+body[dir="rtl"] .mil-top-menu ul li ul li a {
+    justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+    body[dir="rtl"] .mil-top-menu {
+        right: 0;
+        left: auto;
+    }
+}
+
+body[dir="rtl"] .mil-menu-buttons {
+    flex-direction: row-reverse;
+    gap: 12px;
+}
+
+body[dir="rtl"] .mil-breadcrumbs {
+    direction: rtl;
+}
+
+body[dir="rtl"] .mil-list-2 li,
+body.about-hebrew-rtl .mil-list-2 li {
+    padding-right: 56px;
+    padding-left: 0;
+}
+
+body[dir="rtl"] .mil-list-2 li:after,
+body.about-hebrew-rtl .mil-list-2 li:after {
+    right: 0;
+    left: auto;
+}
+
+body[dir="rtl"] .mil-checkbox-frame {
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+body[dir="rtl"] .mil-checkbox-frame p {
+    padding: 0;
+}
+
+body[dir="rtl"] footer .mil-footer-bottom .mil-text-right {
+    text-align: left;
+}
+
+body[dir="rtl"] footer .mil-footer-bottom .mil-sm-text-left {
+    text-align: right;
+}
